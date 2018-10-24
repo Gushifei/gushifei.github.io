@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="为什么学习hibernate框架Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行了非常轻量级的对象封装，它将POJO与数据库表建立映射关系，是一个全自动的orm框架，hibernate可以自动生成SQL语句，自动执行，使得Java程序员可以随心所欲的使用对象编程思维来操纵数据库。  关键词： 对象关系映射  1.创建对象123456789public class GirlFr">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hibernate入门_1">
+<meta property="og:url" content="http://yoursite.com/categories/hibernate1.html">
+<meta property="og:site_name" content="苏州城外无故人">
+<meta property="og:description" content="为什么学习hibernate框架Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行了非常轻量级的对象封装，它将POJO与数据库表建立映射关系，是一个全自动的orm框架，hibernate可以自动生成SQL语句，自动执行，使得Java程序员可以随心所欲的使用对象编程思维来操纵数据库。  关键词： 对象关系映射  1.创建对象123456789public class GirlFr">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14611540-8a021b92efa3fa63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-10-24T13:26:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hibernate入门_1">
+<meta name="twitter:description" content="为什么学习hibernate框架Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行了非常轻量级的对象封装，它将POJO与数据库表建立映射关系，是一个全自动的orm框架，hibernate可以自动生成SQL语句，自动执行，使得Java程序员可以随心所欲的使用对象编程思维来操纵数据库。  关键词： 对象关系映射  1.创建对象123456789public class GirlFr">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/14611540-8a021b92efa3fa63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/categories/hibernate1.html"/>
+
+
+
+
+
+  <title>Hibernate入门_1 | 苏州城外无故人</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苏州城外无故人</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline">Hibernate入门_1</h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <h3 id="为什么学习hibernate框架"><a href="#为什么学习hibernate框架" class="headerlink" title="为什么学习hibernate框架"></a>为什么学习hibernate框架</h3><p>Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行了非常轻量级的对象封装，它将POJO与数据库表建立映射关系，是一个全自动的<strong>orm</strong>框架，hibernate可以自动生成SQL语句，自动执行，使得Java程序员可以随心所欲的使用对象编程思维来操纵数据库。</p>
+<hr>
+<p>关键词： 对象关系映射</p>
+<hr>
+<h5 id="1-创建对象"><a href="#1-创建对象" class="headerlink" title="1.创建对象"></a>1.创建对象</h5><p><img src="https://upload-images.jianshu.io/upload_images/14611540-8a021b92efa3fa63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="demo结构图"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class GirlFriend </span><br><span class="line">&#123;</span><br><span class="line">	private int id;</span><br><span class="line">	private String name;</span><br><span class="line">	private String height;</span><br><span class="line">	private String weight;</span><br><span class="line">	private String appearance;</span><br><span class="line">	private int age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="2-关系映射"><a href="#2-关系映射" class="headerlink" title="2. 关系映射"></a>2. 关系映射</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;hibernate-mapping&gt;</span><br><span class="line">	&lt;!-- 建立类与表的映射 --&gt;</span><br><span class="line">	&lt;class name=&quot;com.test.www.GirlFriend&quot; table=&quot;girlfriend&quot;&gt;</span><br><span class="line">		&lt;!-- 建立类中的属性与表中的主键对应 --&gt;</span><br><span class="line">		&lt;id name=&quot;id&quot; column=&quot;id&quot; &gt;</span><br><span class="line">			&lt;generator class=&quot;native&quot;/&gt;</span><br><span class="line">		&lt;/id&gt;		</span><br><span class="line">		&lt;!-- 建立类中的普通的属性和表的字段的对应 --&gt;</span><br><span class="line">		&lt;property name=&quot;name&quot; column=&quot;name&quot; length=&quot;32&quot; /&gt;</span><br><span class="line">		&lt;property name=&quot;age&quot; column=&quot;age&quot; length=&quot;32&quot;/&gt;</span><br><span class="line">		&lt;property name=&quot;height&quot; column=&quot;height&quot;/&gt;</span><br><span class="line">		&lt;property name=&quot;weight&quot; column=&quot;weight&quot;/&gt;</span><br><span class="line">	&lt;/class&gt;</span><br><span class="line">&lt;/hibernate-mapping&gt;</span><br></pre></td></tr></table></figure>
+<p>   GirlFriend.hbm.xml</p>
+<hr>
+<h5 id="3-核心配置文件"><a href="#3-核心配置文件" class="headerlink" title="3.核心配置文件"></a>3.核心配置文件</h5><p>数据库配置以及读取关系映射<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;hibernate-configuration&gt;</span><br><span class="line">	&lt;session-factory&gt;</span><br><span class="line">		&lt;!-- 连接数据库的基本参数 --&gt;</span><br><span class="line">		&lt;property name=&quot;hibernate.connection.driver_class&quot;&gt;com.mysql.jdbc.Driver&lt;/property&gt;</span><br><span class="line">		&lt;property name=&quot;hibernate.connection.url&quot;&gt;jdbc:mysql:///test&lt;/property&gt;</span><br><span class="line">		&lt;property name=&quot;hibernate.connection.username&quot;&gt;root&lt;/property&gt;</span><br><span class="line">		&lt;property name=&quot;hibernate.connection.password&quot;&gt;123456&lt;/property&gt;</span><br><span class="line">		&lt;!-- 配置Hibernate的方言 --&gt;</span><br><span class="line">		&lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQLDialect&lt;/property&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;!-- 可选配置================ --&gt;</span><br><span class="line">		&lt;!-- 打印SQL --&gt;</span><br><span class="line">		&lt;property name=&quot;hibernate.show_sql&quot;&gt;true&lt;/property&gt;</span><br><span class="line">		&lt;!-- 格式化SQL --&gt;</span><br><span class="line">		&lt;property name=&quot;hibernate.format_sql&quot;&gt;true&lt;/property&gt;</span><br><span class="line">		&lt;!-- 自动创建表 --&gt;</span><br><span class="line">		&lt;property name=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/property&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;!-- 配置C3P0连接池 --&gt;</span><br><span class="line">		&lt;property name=&quot;connection.provider_class&quot;&gt;org.hibernate.connection.C3P0ConnectionProvider&lt;/property&gt;</span><br><span class="line">		&lt;!--在连接池中可用的数据库连接的最少数目 --&gt;</span><br><span class="line">		&lt;property name=&quot;c3p0.min_size&quot;&gt;5&lt;/property&gt;</span><br><span class="line">		&lt;!--在连接池中所有数据库连接的最大数目  --&gt;</span><br><span class="line">		&lt;property name=&quot;c3p0.max_size&quot;&gt;20&lt;/property&gt;</span><br><span class="line">		&lt;!--设定数据库连接的过期时间,以秒为单位,</span><br><span class="line">		如果连接池中的某个数据库连接处于空闲状态的时间超过了timeout时间,就会从连接池中清除 --&gt;</span><br><span class="line">		&lt;property name=&quot;c3p0.timeout&quot;&gt;120&lt;/property&gt;</span><br><span class="line">		 &lt;!--每3000秒检查所有连接池中的空闲连接 以秒为单位--&gt;</span><br><span class="line">		&lt;property name=&quot;c3p0.idle_test_period&quot;&gt;3000&lt;/property&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;mapping resource=&quot;com/test/www/GirlFriend.hbm.xml&quot;/&gt;</span><br><span class="line">	&lt;/session-factory&gt;</span><br><span class="line">&lt;/hibernate-configuration&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="测试类"><a href="#测试类" class="headerlink" title="测试类"></a>测试类</h5><p>1.获取session连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">package com.test.www.utils;</span><br><span class="line"></span><br><span class="line">import org.hibernate.Session;</span><br><span class="line">import org.hibernate.SessionFactory;</span><br><span class="line">import org.hibernate.cfg.Configuration;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * HibernateUtils </span><br><span class="line"> * @author gushifei</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class HibernateUtils &#123;</span><br><span class="line">	public static final Configuration config;</span><br><span class="line">	public static final SessionFactory sessinfactory;</span><br><span class="line">	</span><br><span class="line">	static&#123;</span><br><span class="line">		config = new Configuration().configure();</span><br><span class="line">		sessinfactory = config.buildSessionFactory();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static Session getSession()&#123;</span><br><span class="line">		return sessinfactory.openSession();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2.增删改查<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">package com.test.www.demo;</span><br><span class="line"></span><br><span class="line">import java.io.Serializable;</span><br><span class="line"></span><br><span class="line">import org.hibernate.Session;</span><br><span class="line">import org.hibernate.Transaction;</span><br><span class="line">import org.junit.Test;</span><br><span class="line"></span><br><span class="line">import com.test.www.GirlFriend;</span><br><span class="line">import com.test.www.utils.HibernateUtils;</span><br><span class="line">/**</span><br><span class="line"> * hibernate&apos;s test  class</span><br><span class="line"> * @author gushifei</span><br><span class="line"> * CUDR</span><br><span class="line"> */</span><br><span class="line">public class HibernateTest </span><br><span class="line">&#123;</span><br><span class="line">	@Test</span><br><span class="line">	public void saveGirlFriend() </span><br><span class="line">	&#123;</span><br><span class="line">		Session session = HibernateUtils.getSession();</span><br><span class="line">		Transaction transaction = session.beginTransaction();</span><br><span class="line">		</span><br><span class="line">		GirlFriend girlFriend = new GirlFriend();</span><br><span class="line">		girlFriend.setAge(18);</span><br><span class="line">		girlFriend.setName(&quot;Angel&quot;);</span><br><span class="line">		Serializable serializable = session.save(girlFriend);</span><br><span class="line">		System.out.println(serializable);</span><br><span class="line">		transaction.commit();</span><br><span class="line">		session.close();</span><br><span class="line">	&#125;</span><br><span class="line">	/**</span><br><span class="line">	 * get  -- load  ; diff</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void queryGirlFriend() </span><br><span class="line">	&#123;</span><br><span class="line">		Session session = HibernateUtils.getSession();</span><br><span class="line">		Transaction transaction = session.beginTransaction();</span><br><span class="line">		//get</span><br><span class="line">		/*</span><br><span class="line">		GirlFriend girlFriend = session.get(GirlFriend.class, 2);</span><br><span class="line">		System.out.println(girlFriend);*/</span><br><span class="line">		//load</span><br><span class="line">		GirlFriend girlFriend = session.load(GirlFriend.class, 2);</span><br><span class="line">		System.out.println(girlFriend);	</span><br><span class="line">		transaction.commit();</span><br><span class="line">		session.close();</span><br><span class="line">	&#125;</span><br><span class="line">	//patch</span><br><span class="line">	public void patchGirlFriend() </span><br><span class="line">	&#123;</span><br><span class="line">		Session session = HibernateUtils.getSession();</span><br><span class="line">		Transaction transaction = session.beginTransaction();</span><br><span class="line">		//直接修改</span><br><span class="line">		/*</span><br><span class="line">		GirlFriend girlFriend = new GirlFriend();</span><br><span class="line">		girlFriend.setId(2);;</span><br><span class="line">		girlFriend.setName(&quot;abc&quot;);</span><br><span class="line">		session.update(girlFriend);*/</span><br><span class="line">		//查询后修改（这样不会覆盖其他字段）</span><br><span class="line">		GirlFriend girlFriend = session.get(GirlFriend.class, 2);</span><br><span class="line">		girlFriend.setAge(22);</span><br><span class="line">		session.update(girlFriend);</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		transaction.commit();</span><br><span class="line">		session.close();</span><br><span class="line">	&#125;</span><br><span class="line">	//delete</span><br><span class="line">	public void deleteGirlFriend() </span><br><span class="line">	&#123;</span><br><span class="line">		Session session = HibernateUtils.getSession();</span><br><span class="line">		Transaction transaction = session.beginTransaction();</span><br><span class="line">		</span><br><span class="line">		//直接创建对象删除</span><br><span class="line">		/*</span><br><span class="line">		GirlFriend girlFriend = new GirlFriend();</span><br><span class="line">		girlFriend.setId(2);</span><br><span class="line">		session.delete(girlFriend);*/</span><br><span class="line">		</span><br><span class="line">		//先查询再删除-级联删除</span><br><span class="line">		GirlFriend girlFriend = session.get(GirlFriend.class, 2);</span><br><span class="line">		session.delete(girlFriend);</span><br><span class="line">		</span><br><span class="line">		transaction.commit();</span><br><span class="line">		session.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>get方法和load方法的区别</p>
+<p> get方法</p>
+<p>采用的是立即加载，执行到这行代码的时候，就会马上发送SQL语句去查询。查询后返回是真实对象本身。查询一个找不到的对象的时候，返回null</p>
+<p>load方法<br>采用的是延迟加载（lazy懒加载），执行到这行代码的时候，不会发送SQL语句，当真正使用这个对象的时候才会发送SQL语句。查询后返回的是代理对象。javassist-3.18.1-GA.jar 利用javassist技术产生的代理。查询一个找不到的对象的时候，返回ObjectNotFoundException</p>
+<hr>
+<p>关键词：懒加载 立即加载 ； 动态代理</p>
+<hr>
+<h5 id="需要补充"><a href="#需要补充" class="headerlink" title="需要补充"></a>需要补充</h5><p>Hibernate的设计模式</p>
+<p>sessionFactory 工厂模式</p>
+<p>动态代理</p>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MDQzNi8xNjk2Mw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.jpg"
+                alt="苏州城外无故人" />
+            
+              <p class="site-author-name" itemprop="name">苏州城外无故人</p>
+              <p class="site-description motion-element" itemprop="description">吟最美的诗，看最美的你，写最美的代码。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么学习hibernate框架"><span class="nav-number">1.</span> <span class="nav-text">为什么学习hibernate框架</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-创建对象"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.创建对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-关系映射"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 关系映射</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-核心配置文件"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.核心配置文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#测试类"><span class="nav-number">1.0.4.</span> <span class="nav-text">测试类</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题"><span class="nav-number">1.1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#需要补充"><span class="nav-number">1.1.1.</span> <span class="nav-text">需要补充</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">苏州城外无故人</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">2</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
